@@ -1,0 +1,1 @@
+-e "*.mysql\n*.pyc\n__pycache__/" 
