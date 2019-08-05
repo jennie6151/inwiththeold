@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class antiqueType(models.Model):
+class AntiqueType(models.Model):
     """Model representing an antique type ie pottery/glass."""
     name = models.CharField(max_length=200, help_text='Enter an antique or collectable type (e.g. Pottery vase)')
     
@@ -19,7 +19,7 @@ class Antique(models.Model):
     
     summary = models.TextField(max_length=1000, help_text='Enter a description of the antique')
         
-    antiqueType = models.ManyToManyField(antiqueType, help_text='Select a type for this antique')
+    AntiqueType = models.ManyToManyField(AntiqueType, help_text='Select a type for this antique')
     
     def __str__(self):
         return self.title
@@ -39,4 +39,4 @@ class Creator(models.Model):
         return reverse('creator-detail', args=[str(self.id)])
 
     def __str__(self):
-        return f'{self.creator_name}'
+        return self.creator_name
