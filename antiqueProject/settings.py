@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'antiqueProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'antiqueDatabase',
-        'USER': 'antiqueDatabaseuser',
-        'PASSWORD': 'antiquePassword',
+        'NAME': 'antiquedatabase',
+        'USER': 'app',
+        'PASSWORD': 'Centre12!',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PORT': '3306',
     }
 }
 

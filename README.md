@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jennie6151/inwiththeold.svg?branch=master)](https://travis-ci.org/jennie6151/inwiththeold)
+
 # Full Stack Frameworks with Django Milestone Project:
 ### Build a full-stack site based around business logic used to control a centrally-owned dataset. Set up an authentication mechanism and provide paid access to the site's data and/or other activities based on the dataset, such as the purchase of a product/service.
 
@@ -86,7 +88,7 @@ These features have not been included in stage 1 of development but would be imp
 * [S3](https://aws.amazon.com/s3/)
     * Used to serve static and media files
 * [Travis](https://travis-ci.org/)
-    * Used for automated testing
+    * Used for continuous integration testing
 * [Git](https://git-scm.com/)
     * Used for version control
 * [Github](https://github.com/)
@@ -143,4 +145,3 @@ I used **Git** for versioning on this project, hosted **Git** on **Github**. Hos
 
 #### *MIT © 2019 Jennifer Dick*
 
-[![Build Status](https://travis-ci.org/jennie6151/inwiththeold.svg?branch=master)](https://travis-ci.org/jennie6151/inwiththeold)
