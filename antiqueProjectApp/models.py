@@ -13,30 +13,33 @@ from django.urls import reverse
 
 class Antique(models.Model):
     """Model representing an antique/collectable/artefact"""
-    title = models.CharField(max_length=200)
+    Title = models.CharField(max_length=200)
 
-    creator = models.ForeignKey('Creator', on_delete=models.SET_NULL, null=True)
+    Creator = models.ForeignKey('Creator', on_delete=models.SET_NULL, null=True)
     
-    summary = models.TextField(max_length=1000, help_text='Enter a description of the antique')
+    Summary = models.TextField(max_length=1000, help_text='Enter a description of the antique')
         
     AntiqueType = models.ManyToManyField(AntiqueType, help_text='Select a type for this antique')
+
+    DateOfCreation = models.IntegerField(null=True, blank=True)
+
+    Price= models.DecimalField(max_digits=10, decimal_places=2, default=0)
     
     def __str__(self):
-        return self.title
+        return self.Title
     
     def get_absolute_url(self):
         return reverse('antique-detail', args=[str(self.id)])
 
 class Creator(models.Model):
     """Model representing the creator/brand"""
-    creator_name = models.CharField(max_length=120)
-    date_of_creation = models.DateField(null=True, blank=True)
+    CreatorName = models.CharField(max_length=120)
 
     class Meta:
-        ordering = ['creator_name']
+        ordering = ['CreatorName']
 
     def get_absolute_url(self):
         return reverse('creator-detail', args=[str(self.id)])
 
     def __str__(self):
-        return self.creator_name
+        return self.CreatorName
