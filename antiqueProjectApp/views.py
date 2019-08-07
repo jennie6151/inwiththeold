@@ -1,5 +1,17 @@
 from django.shortcuts import render, HttpResponse
 
 # Create your views here.
-def say_hello(request):
-    return HttpResponse("Bonjour le monde")
+
+from antiqueProjectApp.models import Antique, Creator, AntiqueType
+
+def index(request):
+
+    numAntiques = Antique.objects.all().count()
+    numCreators = Creator.objects.count()
+    
+    context = {
+        'numAntiques': numAntiques,
+        'numCreators': numCreators,
+    }
+
+    return render(request, 'index.html', context=context)
