@@ -23,3 +23,7 @@ class AntiqueListView(generic.ListView):
 
 class AntiqueDetailView(generic.DetailView):
     model = Antique
+
+class AntiqueListView(generic.ListView):
+    model = Antique
+    paginate_by = 2
