@@ -13,7 +13,7 @@ from django.urls import reverse
 
 class Antique(models.Model):
     """Model representing an antique/collectable/artefact"""
-    Antique = models.CharField(max_length=200)
+    AntiqueName = models.CharField(max_length=200)
 
     Creator = models.ForeignKey('Creator', on_delete=models.SET_NULL, null=True)
     
@@ -26,7 +26,7 @@ class Antique(models.Model):
     Price= models.DecimalField(max_digits=10, decimal_places=2, default=0)
     
     def __str__(self):
-        return self.Antique
+        return self.AntiqueName
     
     def get_absolute_url(self):
         return reverse('antique-detail', args=[str(self.id)])

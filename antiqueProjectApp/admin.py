@@ -9,4 +9,4 @@ admin.site.register(AntiqueType)
 
 @admin.register(Antique)
 class AntiqueAdmin(admin.ModelAdmin):
-    list_display = ('Antique', 'Creator', 'display_AntiqueType')
+   list_display = ('AntiqueName', 'Creator', 'display_AntiqueType')

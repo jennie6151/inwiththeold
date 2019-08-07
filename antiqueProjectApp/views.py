@@ -15,3 +15,11 @@ def index(request):
     }
 
     return render(request, 'index.html', context=context)
+
+from django.views import generic
+
+class AntiqueListView(generic.ListView):
+    model = Antique
+
+class AntiqueDetailView(generic.DetailView):
+    model = Antique

@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Catalogue of antiques and collectables</h1>
+  {% if antique_list %}
+  <ul>
+    {% for Antique in antique_list %}
+      <li>
+        <a href="{{ Antique.get_absolute_url }}">{{ Antique.AntiqueName }}</a> ({{Antique.Creator}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no antiques to see here.</p>
+  {% endif %}       
+{% endblock %}
