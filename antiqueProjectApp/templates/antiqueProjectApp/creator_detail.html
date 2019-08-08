@@ -2,9 +2,7 @@
 
 {% block content %}
 
-<h1>Antique collections</h1>
-
-<h4>List of antiques by {{ creator.CreatorName}}</h4>
+<h1>List of antiques by {{ creator.CreatorName}}</h1>
 
 <dl>
 {% for antique in creator.antique_set.all %}
