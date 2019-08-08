@@ -4,7 +4,7 @@
 
 <h1>{{ antique.AntiqueName }}</h1>
 
-<p><strong>Creator:</strong> <a href=""> {{ antique.Creator }}</a></p>
+<p><strong>Creator:</strong> <a href="{% url 'creator-detail' Antique.Creator.pk %}">{{ Antique.Creator }}</a></p>
 <p><strong>Product description:</strong> {{ antique.Summary }}</p>
 <p><strong>Product type:</strong> {% for AntiqueType in antique.AntiqueType.all %}
     {{ AntiqueType }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>

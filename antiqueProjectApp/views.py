@@ -20,10 +20,14 @@ from django.views import generic
 
 class AntiqueListView(generic.ListView):
     model = Antique
+    paginate_by = 12
 
 class AntiqueDetailView(generic.DetailView):
     model = Antique
 
-class AntiqueListView(generic.ListView):
-    model = Antique
-    paginate_by = 2
+class CreatorListView(generic.ListView):
+    model = Creator
+    paginate_by = 12
+
+class CreatorDetailView(generic.DetailView):
+    model = Creator
