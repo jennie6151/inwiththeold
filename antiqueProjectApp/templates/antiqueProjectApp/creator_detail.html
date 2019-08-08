@@ -2,7 +2,17 @@
 
 {% block content %}
 
-<h1>{{ creator.Creator }}</h1>
+<h1>Antique collections</h1>
 
+<h4>List of antiques by {{ creator.CreatorName}}</h4>
 
+<dl>
+{% for antique in creator.antique_set.all %}
+  <dt><a href="{% url 'antique-detail' antique.pk %}">{{ antique.AntiqueName }}</a></dt>
+  
+{% endfor %}
+</dl>
+
+</div>
+  
 {% endblock %}

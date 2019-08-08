@@ -9,7 +9,6 @@
     {% for Creator in creator_list %}
       <li>
             <a href="{{ Creator.get_absolute_url }}">{{ Creator.CreatorName }}</a>
-      </li>
     {% endfor %}
   </ul>
   {% else %}
