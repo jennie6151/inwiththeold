@@ -26,3 +26,8 @@ from django.urls import path
 urlpatterns += [
     path('antiqueProjectApp/', include('antiqueProjectApp.urls')),
 ]
+
+#For authentication management
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
+]
