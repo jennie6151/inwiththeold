@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class AntiqueType(models.Model):
@@ -35,6 +36,28 @@ class Antique(models.Model):
         return ', '.join(AntiqueType.name for AntiqueType in self.AntiqueType.all()[:3])
     
     display_AntiqueType.short_description = 'AntiqueType'
+
+import uuid
+
+class AntiqueSale(models.Model):
+    """Model representing a specific sale"""
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this particular antique across the whole site')
+    antiqueBuyer = models.ForeignKey('Antique', on_delete=models.SET_NULL, null=True)
+    customerFirstName = models.CharField(max_length=100, null=False)
+    customerLastName = models.CharField(max_length=100, null=False)
+    customerAddressLine1 = models.TextField(max_length=200, null=False)
+    customerAddressLine2 = models.TextField(max_length=200, null=True)
+    customerAddressCity = models.TextField(max_length=200, null=False)
+    customerAddressCounty = models.TextField(max_length=200, null=False)
+    customerAddressPostcode = models.TextField(max_length=12, null=False)
+    customerEmail = models.TextField(max_length=200, null=False)
+    customerTelephone = models.TextField(max_length=20, null=False)
+
+    
+    def __str__(self):
+        """String for representing the Model object."""
+        return f'{self.id} ({self.antique.AntiqueName})'
+
 
 class Creator(models.Model):
     """Model representing the creator/brand"""

@@ -1,6 +1,14 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+{% if user.is_authenticated %}
+  Hello {{ user.username }}
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+
   <h1>In with the old</h1>
   <h3>The home of quality antiques and collectables</h3>
   <p>In with the old has the following record counts:</p>
