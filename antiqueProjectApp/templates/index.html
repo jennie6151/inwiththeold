@@ -2,21 +2,23 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-  Hello {{ user.username }}
-  <p><a href="{% url 'logout' %}">logout</a></p>
+Hello {{ user.username }}
+<p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">login</a>
 {% endif %}
 
-  <h1>In with the old</h1>
-  <h3>The home of quality antiques and collectables</h3>
-  <p>In with the old has the following record counts:</p>
-  <ul>
-    <li>Antiques: {{ numAntiques }}</li>
-    <li>Creators: {{ numCreators }}</li>
-  </ul>
+<h1>In with the old</h1>
+<h3>The home of quality antiques and collectables</h3>
+<p>In with the old has the following record counts:</p>
+<ul>
+  <li>Antiques: {{ numAntiques }}</li>
+  <li>Creators: {{ numCreators }}</li>
+</ul>
 
-  <p>You have visited this homepage a total of {{ numVisits }}{% if numVisits == 1 %} time{% else %} times{% endif %}.</p>
 
-{% endblock %}
+  <p>You have visited this homepage a total of {{ numVisits }}{% if numVisits == 1 %} time{% else %} times{% endif %}.
+  </p>
+
+  {% endblock %}
