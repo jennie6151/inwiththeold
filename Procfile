@@ -1,1 +1,1 @@
-web: gunicorn inwiththeold.wsgi
+web: gunicorn inwiththeold.wsgi --log-file -
