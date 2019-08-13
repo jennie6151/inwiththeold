@@ -36,3 +36,5 @@ class CreatorListView(generic.ListView):
 class CreatorDetailView(generic.DetailView):
     model = Creator
     paginate_by = 2
+
+
