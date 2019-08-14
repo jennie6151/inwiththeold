@@ -5,4 +5,4 @@ install: "pip install -r requirements.txt"
 script:
 		- SECRET_KEY="whatever" ./manage.py test
 services:
-  	- mysql
+  - mysql
