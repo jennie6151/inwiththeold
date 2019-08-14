@@ -1,5 +1,8 @@
 from django.urls import path
 from . import views
+from django.conf.urls import url
+from .views import GetAllSales, IndividualSaleDetails, PurchaseAnItem
+
 
 urlpatterns = [
   path('', views.index, name='index'),
@@ -7,4 +10,7 @@ urlpatterns = [
   path('Antique/<int:pk>', views.AntiqueDetailView.as_view(), name='antique-detail'),
   path('creators/', views.CreatorListView.as_view(), name='creators'),
   path('Creator/<int:pk>', views.CreatorDetailView.as_view(), name='creator-detail'),
+  path(r'^$', GetAllSales, name='GetAllSales'),
+  path(r'^new/$', PurchaseAnItem, name='NewSale'),
+  path(r'^(?P<pk>\d+)/edit/$', PurchaseAnItem, name='PurchaseItem')
 ]
