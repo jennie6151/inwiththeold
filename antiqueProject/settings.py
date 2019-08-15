@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '03oma-8widk87u+_=1#!!6gvdae&-k87_+s-&0g%om4)lwap0r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -87,10 +87,10 @@ WSGI_APPLICATION = 'antiqueProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'antiquedatabase',
-        'USER': 'app',
-        'PASSWORD': 'Centre12!',
-        'HOST': '127.0.0.1',
+        'NAME': '3BKqHLGEeY',
+        'USER': '3BKqHLGEeY',
+        'PASSWORD': 'k2tNFe1twM',
+        'HOST': 'remotemysql.com',
         'PORT': '3306',
     }
 }
