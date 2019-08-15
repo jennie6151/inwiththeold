@@ -1,1 +1,1 @@
-web: gunicorn inwiththeold.wsgi:application
+web: gunicorn antiqueProject.wsgi:application
