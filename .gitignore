@@ -1,1 +1,2 @@
 -e "*.mysql\n*.pyc\n__pycache__/" 
+env.py 

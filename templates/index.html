@@ -3,10 +3,12 @@
 {% block content %}
 {% if user.is_authenticated %}
 Hello {{ user.username }}
-<p><a href="{% url 'logout' %}" class="btn btn-warning" role="button">Logout</a></p>
+<p><a href="{% url 'logout'%}?next={{request.path}}" class="btn btn-info" role="button">Logout</a></p>
 {% else %}
-<a href="{% url 'login' %}" class="btn btn-info" role="button">Login</a>
+<a href="{% url 'login' %}?next={{request.path}}" class="btn btn-info" role="button">Login</a>
 {% endif %}
+
+
 
 <h1>In with the old</h1>
 <h3>The home of quality antiques and collectables</h3>
