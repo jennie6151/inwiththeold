@@ -15,13 +15,13 @@ from django.urls import reverse
 class Antique(models.Model):
     """Model representing an antique/collectable/artefact"""
     AntiqueName = models.CharField(max_length=200)
-    AntiqueImage = models.FilePathField(path="/img", null=True, blank=True)
-    #AntiqueImage2 = models.ImageField(upload_to="img", null=True, blank=True)
+    #AntiqueImage2 = models.FilePathField(path="/img", null=True, blank=True)
+    AntiqueImage = models.ImageField(upload_to="img", null=True, blank=True)
     Creator = models.ForeignKey('Creator', on_delete=models.SET_NULL, null=True)
     Summary = models.TextField(max_length=1000, help_text='Enter a description of the antique')
     AntiqueType = models.ManyToManyField(AntiqueType, help_text='Select a type for this antique')
     DateOfCreation = models.IntegerField(null=True, blank=True)
-    Price= models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    Price= models.DecimalField(max_digits=6, decimal_places=2, default=0)
     
     def __str__(self):
         return self.AntiqueName

@@ -14,7 +14,7 @@ urlpatterns = [
     # For authentication management
     path('accounts/', include('django.contrib.auth.urls')),
     path('', TemplateView.as_view(template_name='index.html'), name='home'),
-    path(r'^$', RedirectView.as_view(url='antiqueProjectApp/')),
-    path(r'antiqueProjectApp/', include('antiqueProjectApp.urls')),
-    path(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT})
+    url(r'^$', RedirectView.as_view(url='antiqueProjectApp/')),
+    url(r'antiqueProjectApp/', include('antiqueProjectApp.urls')),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT})
 ]
