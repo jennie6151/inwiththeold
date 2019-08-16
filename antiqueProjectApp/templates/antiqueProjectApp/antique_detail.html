@@ -7,7 +7,7 @@
 <p><strong>Product description:</strong> {{ antique.Summary }}</p>
 <p><strong>Product type:</strong> {% for AntiqueType in antique.AntiqueType.all %}
     {{ AntiqueType }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-<p>{{ antique.Price }}</p>
+<p>£{{ antique.Price }}</p>
 
 {% if user.is_authenticated %}
 
