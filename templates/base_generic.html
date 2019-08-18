@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static './css/styles.css' %}">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   {% block head_js %}
   {% endblock head_js %}
 </head>
@@ -37,10 +38,10 @@
       </ul>
      
       {% if user.is_authenticated %}
-      <p><a href="{% url 'logout' %}?next={{request.path}}" class="btn btn-info" role="button">Logout</a></p>
+      <p><a href="{% url 'logout' %}?next={{request.path}}" class="btn btn-md btn-info" role="button">Logout</a></p>
       {% else %}
-      <a href="{% url 'login' %}?next={{request.path}}" class="btn btn-info" role="button">Login</a>
-      <a href="{% url 'signup' %}?next={{request.path}}" class="btn btn-success" role="button">Sign up</a>
+      <a href="{% url 'login' %}?next={{request.path}}" class="btn btn-md btn-info homepage-button" role="button">Login</a>
+      <a href="{% url 'signup' %}?next={{request.path}}" class="btn btn-success homepage-button" role="button">Sign up</a>
       {% endif %}
 
 
