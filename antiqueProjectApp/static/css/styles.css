@@ -1,20 +1,109 @@
-.sidebar-nav {
-    margin-top: 20px;
-    padding: 0;
-    list-style: none;
+/*------------* Body *------------*/
+.body-font-styling{
+    font-family: 'Merriweather', serif;
+    color: #153243;
 }
 
-.footer {
-    position: fixed;
+.main{
+    width: 50%;
+    margin: 50px auto;
+}
+
+@media only screen and (max-width: 992px) {
+    .main {
+      width:100%;
+    }
+  }
+
+
+/*------------* Navbar *------------*/
+.navbar-styling{
+    background-color: #153243;
+}
+
+.logo-styling{
+    font-family: 'IM Fell English', serif;
+    font-weight:bold;
+}
+
+
+/*------------* Jumbotron *------------*/
+.jumbotron-styling{
+    background-color: #E6E1C5;
+    margin:0px;
+    border-radius: 0px;
+}
+
+.jumbotron-heading-styling{
+    font-family: 'IM Fell English', serif;
+    font-weight: bold;
+}
+
+
+/*------------* Stats section *------------*/
+.stats-styling{
+    background-color: #75B9BE;
+    padding:12px;
+}
+
+.bullet-styling{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*------------* Buttons *------------*/
+.homepage-button{
+    margin:10px;
+}
+
+.search-button{
+    background-color: #6E4555;
+    border-color:transparent;
+    margin:5px;
+    width: 45%;
+}
+
+.search-button:hover {
+    background-color: #543540;
+    border-color:transparent;
+}
+
+.more-info-button{
+    background-color: #6E4555;
+    border-color:transparent;
+}
+
+.more-info-button:hover {
+    background-color: #543540;
+    border-color:transparent;
+}
+
+/*------------* Cards *------------*/
+.card-styling {
+    margin:10px;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+/*------------* antique_list *------------*/
+.antique-list-heading {
+    font-family: 'IM Fell English', serif;
+    font-weight:bold;
+    text-align: center;
+    margin:10px;
+}
+
+
+/*------------* Footer *------------*/
+.footer-styling {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #343a40;
+    background-color: #153243;
     color: white;
     text-align: center;
-}
-
-.homepage-button{
-    margin:10px;
-    font-weight: bold;
 }

@@ -1,36 +1,57 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-{% if user.is_authenticated %}
-<h1>Hello {{ user.username }}</h1>
-{% endif %}
+
+<main>
+<section class="jumbotron text-center jumbotron-styling">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 mx-auto">
+        <h1 class="jumbotron-heading-styling">In with the old</h1>
+        <h4 class="jumbotron-subheading-styling">The home of quality antiques and collectables</h4>
+      </div>
+    </div>
+    <form action="/search" method="GET" class="main">
+      <div class="col-lg-12 mx-auto form-group has-search">
+        <span class="searchBarStyling"></span>
+        <label for="recipeSearch" class="control-label"></label>
+        <input type="text" id="recipeSearch" name="recipeSearch" class="form-control"
+          placeholder="Search for an antique or creator" />
+      </div>
+      <div><button type="submit" class="btn btn-info search-button">Search</button></div>
+    </form>
+  </div>
+</section>
 
 
 
-<h1>In with the old</h1>
-<h3>The home of quality antiques and collectables</h3>
-
-<form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-  </form>
-
-
-
-<p>In with the old has the following record counts:</p>
-<ul>
-  <li>Antiques: {{ numAntiques }}</li>
-  <li>Creators: {{ numCreators }}</li>
-</ul>
-
-
+<article class="stats-styling">
+  <h5>Welcome {{ user.username }}</h5>
   <p>You have visited this homepage a total of {{ numVisits }}{% if numVisits == 1 %} time{% else %} times{% endif %}.
   </p>
 
-  {% for Antique in allAntiques %}
-      <li>
-        <a href="{{ Antique.get_absolute_url }}">{{ Antique.AntiqueName }}</a> ({{Antique.Creator}})
-      </li>
-    {% endfor %}
+  <p><span class="logo-styling">In with the old</span> currently has the following record counts:</p>
+  <ul class="bullet-styling">
+    <li>Antiques: {{ numAntiques }}</li>
+    <li>Creators: {{ numCreators }}</li>
+  </ul>
+</article>
 
-  {% endblock %}
+<div class="row">
+  {% for Antique in allAntiques %}
+  <div class="col-sm-6 col-lg-4">
+    <div class="card card-styling">
+      <div class="card-body">
+        <a href="{{ Antique.get_absolute_url }}"><img src=""></a>
+        <h5 class="card-title text-truncate">{{ Antique.AntiqueName }}</h5>
+        <h6 class="text-muted">{{Antique.Creator}}</h6>
+        <h6 class="text-muted">£{{Antique.Price}}</h6>
+        <a href="{{ Antique.get_absolute_url }}" class="btn btn-info more-info-button btn-block">More info</a>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+</div>
+</main>
+
+{% endblock %}
