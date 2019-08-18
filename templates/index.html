@@ -2,16 +2,21 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-Hello {{ user.username }}
-<p><a href="{% url 'logout'%}?next={{request.path}}" class="btn btn-info" role="button">Logout</a></p>
-{% else %}
-<a href="{% url 'login' %}?next={{request.path}}" class="btn btn-info" role="button">Login</a>
+<h1>Hello {{ user.username }}</h1>
 {% endif %}
 
 
 
 <h1>In with the old</h1>
 <h3>The home of quality antiques and collectables</h3>
+
+<form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+  </form>
+
+
+
 <p>In with the old has the following record counts:</p>
 <ul>
   <li>Antiques: {{ numAntiques }}</li>
