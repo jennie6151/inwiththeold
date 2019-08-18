@@ -20,6 +20,7 @@ def index(request):
         'numAntiques': numAntiques,
         'numCreators': numCreators,
         'numVisits': numVisits,
+        'allAntiques': Antique.objects.all(),
     }
 
     # {"antiqueProjectApp": antiqueProjectApp})
@@ -75,7 +76,7 @@ def IndividualSaleDetails(request, pk):
         # form = AntiquePurchaseForm(instance=sale)
     # return render(request, 'antique_purchase_form.html', {'form': form, 'sale':sale})
 
-stripe_api_key = settings.STRIPE_SECRET
+stripe.api_key = settings.STRIPE_SECRET
 
 
 @login_required()
@@ -88,14 +89,14 @@ def PurchaseAnItem(request, pk=None):
         if purchase_form.is_valid() and payment_form.is_valid():
             sale = purchase_form.save(commit=False)
             saleDate = timezone.now()
-            sale.save
+            sale.save()
 
             try:
                 customer = stripe.Charge.create(
                     amount=100,#int(total * 100),
                     currency="GBP",
                     description=request.user.email,
-                    card=payment_form.cleaned_data['stripe_id']
+                    card=MakePaymentForm.cleaned_data['stripe_id']
                 )
             except stripe.error.CardError:
                 messages.error(request, "Your card was declined!")
@@ -106,13 +107,13 @@ def PurchaseAnItem(request, pk=None):
             else:
                 messages.error(request, "Unable to take payment")
         else:
-            print(payment_form.errors)
+            print(MakePaymentform.errors)
             messages.error(request, "We were unable to take a payment with that card!")
     else:
         payment_form = MakePaymentForm()
-        order_form = OrderForm()
+        purchase_form = AntiquePurchaseForm()
     
-    return render(request, "checkout.html", {"order_form": order_form, "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
+    return render(request, "antique_purchase_form.html", {"purchase_form": purchase_form, "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
 
    
 

@@ -22,4 +22,10 @@ Hello {{ user.username }}
   <p>You have visited this homepage a total of {{ numVisits }}{% if numVisits == 1 %} time{% else %} times{% endif %}.
   </p>
 
+  {% for Antique in allAntiques %}
+      <li>
+        <a href="{{ Antique.get_absolute_url }}">{{ Antique.AntiqueName }}</a> ({{Antique.Creator}})
+      </li>
+    {% endfor %}
+
   {% endblock %}
