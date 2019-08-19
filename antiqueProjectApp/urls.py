@@ -12,5 +12,6 @@ urlpatterns = [
   path('Creator/<int:pk>', views.CreatorDetailView.as_view(), name='creator-detail'),
   url(r'^$', GetAllSales, name='GetAllSales'),
   url(r'^(?P<pk>\d+)/new/$', PurchaseAnItem, name='NewSale'),
-  url(r'^(?P<pk>\d+)/edit/$', PurchaseAnItem, name='PurchaseItem')
+  url(r'^(?P<pk>\d+)/edit/$', PurchaseAnItem, name='PurchaseItem'),
+  path('charge/', views.charge, name='charge'),
 ]

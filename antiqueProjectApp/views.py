@@ -7,6 +7,8 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 import stripe
 
+stripe.api_key = settings.STRIPE_SECRET
+
 
 def index(request):
 
@@ -76,46 +78,28 @@ def IndividualSaleDetails(request, pk):
         # form = AntiquePurchaseForm(instance=sale)
     # return render(request, 'antique_purchase_form.html', {'form': form, 'sale':sale})
 
-stripe.api_key = settings.STRIPE_SECRET
-
 
 @login_required()
 def PurchaseAnItem(request, pk=None):
-    sale = None
+    sale = None  # get_object_or_404(AntiqueSale, pk=pk) if pk else None
     if request.method == "POST":
-        purchase_form = AntiquePurchaseForm(request.POST)
-        payment_form = MakePaymentForm(request.POST)
-
-        if purchase_form.is_valid() and payment_form.is_valid():
-            sale = purchase_form.save(commit=False)
-            saleDate = timezone.now()
-            sale.save()
-
-            try:
-                customer = stripe.Charge.create(
-                    amount=100,#int(total * 100),
-                    currency="GBP",
-                    description=request.user.email,
-                    card=MakePaymentForm.cleaned_data['stripe_id']
-                )
-            except stripe.error.CardError:
-                messages.error(request, "Your card was declined!")
-            
-            if customer.paid:
-                messages.error(request, "You have successfully paid")
-                return redirect(reverse('index'))
-            else:
-                messages.error(request, "Unable to take payment")
-        else:
-            print(MakePaymentform.errors)
-            messages.error(request, "We were unable to take a payment with that card!")
+        form = AntiquePurchaseForm(request.POST, request.FILES, instance=sale)
+        if form.is_valid():
+            sale = form.save()
+            return redirect(SaleSuccess, sale.pk)
     else:
-        payment_form = MakePaymentForm()
-        purchase_form = AntiquePurchaseForm()
-    
-    return render(request, "antique_purchase_form.html", {"purchase_form": purchase_form, "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
+        form = AntiquePurchaseForm(instance=sale)
+    return render(request, 'antique_purchase_form.html', {'form': form})
 
-   
+def charge(request):
+    if request.method == 'POST':
+        charge = stripe.Charge.create(
+            amount=500,
+            currency='GDP',
+            description='A Django charge',
+            source=request.POST['stripeToken']
+        )
+        return render(request, 'charge.html')
 
 
 
