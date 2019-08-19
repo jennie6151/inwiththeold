@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<h3 class="antique-list-heading">Catalogue of antiques and collectables</h3>
+<h2 class="antique-list-heading">Catalogue of antiques and collectables</h2>
 
 {% if antique_list %}
 <ul>
   {% for Antique in antique_list %}
-  <div class="container">
+  <div class="container container-styling">
     <div class="row">
       <div class="col-sm-6 col-lg-4">
         <div class="card card-styling">
@@ -27,9 +27,5 @@
 {% else %}
 <p>There are no antiques to see here.</p>
 {% endif %}
-
-
-
-
 
 {% endblock %}

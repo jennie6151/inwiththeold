@@ -3,14 +3,18 @@ from django.urls import path, include
 from django.contrib import admin
 from django.views.generic import RedirectView
 from django.views.static import serve
+from search import urls as urls_search
+#from antiqueProjectApp.views import allAntiques
 from django.views.generic.base import TemplateView
 from .settings import MEDIA_ROOT
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #url(r'^$', allAntiques, name='index'),
     path('', include('antiqueProjectApp.urls')),
     path('accounts/', include('accounts.urls')),
+    url(r'^search/', include(urls_search)),
     # For authentication management
     path('accounts/', include('django.contrib.auth.urls')),
     path('', TemplateView.as_view(template_name='index.html'), name='home'),

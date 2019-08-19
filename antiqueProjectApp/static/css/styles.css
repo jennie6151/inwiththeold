@@ -4,6 +4,10 @@
     color: #153243;
 }
 
+.body-styling{
+    background-color: #FFFCF7;
+}
+
 .main{
     width: 50%;
     margin: 50px auto;
@@ -41,6 +45,13 @@
 
 
 /*------------* Stats section *------------*/
+.line-styling{
+    border: none;
+    height: 10px;
+    margin:0px;
+    background-color: #153243;
+}
+
 .stats-styling{
     background-color: #75B9BE;
     padding:12px;
@@ -88,13 +99,18 @@
     overflow: hidden;
 }
 
+.all-card-styling{
+    margin-top:30px;
+}
+
 
 /*------------* antique_list *------------*/
 .antique-list-heading {
-    font-family: 'IM Fell English', serif;
-    font-weight:bold;
-    text-align: center;
-    margin:10px;
+    margin:12px;
+}
+
+.container-styling{
+    margin:12px;
 }
 
 
