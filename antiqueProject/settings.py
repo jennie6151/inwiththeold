@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'antiqueProjectApp',
     'accounts.apps.AccountsConfig',
     'django_forms_bootstrap',
+    'search',
 ]
 
 MIDDLEWARE = [
