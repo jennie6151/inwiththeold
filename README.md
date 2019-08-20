@@ -23,12 +23,22 @@ This project is licensed under the MIT License - see the [license.txt](license.t
 ## Overview
 
 ### What is this website for?
-This site uses business logic to control a 
+This website is for individuals who wish to purchase an antique or a collectable. The site provides a clear and easy to use shopping experience for those individuals, including an antique name, creator, image, description and price.
+
+The colour scheme and typography adopted reflects the vintage feel of the antiques and collectables to appeal to my desired target audience.
+
+The search bar has prominence on the index page as this is the search style that I am encouraging users to employ.
+
+The navigation bar is consistent across the site and has clear calls to action for sign up, login and logout features. It is important that there is a benefit to signing up to a website and in this case it is to have authorisation to purchase a product.
+
+The whole user process from browsing to purchase of an item is clearly pathed out and adopts a logical shopping approach.
 
 ### What does this website do?
 This website is motivated by the brief provided by [The Code Institute](https://codeinstitute.net/) and uses the criteria supplied. It was imperative that I create a site that enables users to:
-* Search for an antique
-* Filter these antiques by specific criteria
+* Search for an antique by name or creator
+* Read information on the product
+* See an image of the product
+* Login or signup to access authorisation to purchase
 * Purchase an antique
 
 ### How does it work?
@@ -57,14 +67,17 @@ The site is styled with **Bootstrap** and I have made the site responsive so use
 ## Features
 
 * Eye catching index page
+* Authentication. Signup, Login and Logout functionality meaning only members who have signed up can purchase an antique 
 * Large easy to see and use search box
-* Clear search results with specific criteria to further filter by
-* Add, edit and delete functionality for all recipes
+* Antique and creator statistics from across the site on the homepage
+* Clear search result
+* User friendly payment form
+* Payment functionality supplied by Stripe
 
 
 ### Features left to implement
 These features have not been included in stage 1 of development but would be implemented in future developments:
-* None
+* Shopping cart feature was deemed unnecessary for first release as people buying antiques aren't likely to purchase multiple but this feature would be included in stage 2. 
 
 
 <a name="tech"></a>
@@ -85,7 +98,7 @@ These features have not been included in stage 1 of development but would be imp
     * Web framework used to help style this single page application
 * [Ruby Lane](https://www.rubylane.com/)
     * Used for antique content and graphics
-* [S3](https://aws.amazon.com/s3/)
+* [White Noise](http://whitenoise.evans.io/en/stable/#)
     * Used to serve static and media files
 * [Travis](https://travis-ci.org/)
     * Used for continuous integration testing
@@ -95,7 +108,7 @@ These features have not been included in stage 1 of development but would be imp
     * Used as hosting platform for Git
 * [Heroku](https://www.heroku.com/)
     * Platform used to host website
-* Other resources used: [Fontawesome v5.7.2](https://fontawesome.com/)
+* Other resources used: [Fontawesome v5.7.2](https://fontawesome.com/), [Google Fonts](https://fonts.google.com/)
 
 <a name="testing"></a>
 
@@ -117,14 +130,13 @@ These features have not been included in stage 1 of development but would be imp
 As a user I want to...
 1. search 'eight' and see 1 antique ("Eight flow blue cabinet plates") appear. Test performed and true.
 2. search 'skater' and see 1 antique of ("Bunnykins - Boy Skater") and click on the result and it to open the antique details page. Test performed and true.
-3. search 'beswick' and see antiques from "Beswick" and then from the Search Results page type 'Spode' and my search to be updated. Test performed and true.
+3. search 'beswick' and see antiques from "Beswick" and then from the Search Results page type 'Bristol' and my search to be updated. Test performed and true.
 4. search 'royal' and see antiques from "Royal Doulton" and "Royal Albert". Test performed and true.
 5. search 'donkey' and find 0 recipes and a warning message. Test performed and true.
 6. click on "Low-fat" from the dropdown filter and see 3 results. Test performed and true.
-7. click on the 'Add recipe' button and be able to add a recipe and for the mandatory fields to stop form submission if not completed. Recipe to appear on the index page in a new card. Test performed and true.
-8. search 'soup' and use the 'Sort by' dropdown to change between alphabetical listing (ascending) or by number of likes (descending). Test performed and true.
-9. from any chosen recipe click 'Like recipe' button and for the 'Recipe likes:' to update on the recipe and on the homepage card. Test performed and true.
-10. from any chosen recipe click 'Edit recipe' button and to be taken to the edit page, make changes and for these to be reflected in recipe and index pages. Test performed and true.
+7. click on "Signup" and be prompted to enter a username and password and then be sent to the login screen and login successfully. Test performed and true.
+8. click on "Logout" and successfully log out. Test performed and true.
+9. click on "Purchase item" and be taken through to Stripe payment, click to enter details manually. Enter email: admin@example.com, account number: 4242 4242 4242 4242, expiry date: 11/20, CVC:123. And a successful test payment to be made. Test performed and true.
 
 
 <a name="version"></a>
@@ -139,7 +151,7 @@ I used **Git** for versioning on this project, hosted **Git** on **Github**. Hos
 * *Paul Lewis* - colleague (Software Developer) who tested finished site.
 * *Mallory Bemrose* - colleague who tested finished site.
 * *Michael Skelton* - family who tested finished site. 
-* *Haley Schafer* - Code Institute tutor. For help with deployment to Heroku, secret keys and debug mode.
+* *Code Institute tutors* - for support with deployment to Heroku, secret keys/environment variables and search functionality.
 
 ## Commands to remember
 
