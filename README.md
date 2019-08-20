@@ -117,15 +117,14 @@ These features have not been included in stage 1 of development but would be imp
 As a user I want to...
 1. search 'eight' and see 1 antique ("Eight flow blue cabinet plates") appear. Test performed and true.
 2. search 'skater' and see 1 antique of ("Bunnykins - Boy Skater") and click on the result and it to open the antique details page. Test performed and true.
-3. search 'royal' and find 'Fresh topped pizza' and then from the Search Results page type 'BBQ' and my search to be updated. Test performed and true.
-4. search 'royal' and find results from both 
-4. search 'donkey' and find 0 recipes and a warning message. Test performed and true.
-5. click on "Low-fat" from the dropdown filter and see 3 results. Test performed and true.
-6. click on the 'Add recipe' button and be able to add a recipe and for the mandatory fields to stop form submission if not completed. Recipe to appear on the index page in a new card. Test performed and true.
-7. search 'soup' and use the 'Sort by' dropdown to change between alphabetical listing (ascending) or by number of likes (descending). Test performed and true.
-8. from any chosen recipe click 'Like recipe' button and for the 'Recipe likes:' to update on the recipe and on the homepage card. Test performed and true.
-9. from any chosen recipe click 'Edit recipe' button and to be taken to the edit page, make changes and for these to be reflected in recipe and index pages. Test performed and true.
-10. from any chosen recipe click 'Delete recipe' button and a confirmation pop up to appear, on clicking OK the recipe will be removed from the website and database. Test performed and true.
+3. search 'beswick' and see antiques from "Beswick" and then from the Search Results page type 'Spode' and my search to be updated. Test performed and true.
+4. search 'royal' and see antiques from "Royal Doulton" and "Royal Albert". Test performed and true.
+5. search 'donkey' and find 0 recipes and a warning message. Test performed and true.
+6. click on "Low-fat" from the dropdown filter and see 3 results. Test performed and true.
+7. click on the 'Add recipe' button and be able to add a recipe and for the mandatory fields to stop form submission if not completed. Recipe to appear on the index page in a new card. Test performed and true.
+8. search 'soup' and use the 'Sort by' dropdown to change between alphabetical listing (ascending) or by number of likes (descending). Test performed and true.
+9. from any chosen recipe click 'Like recipe' button and for the 'Recipe likes:' to update on the recipe and on the homepage card. Test performed and true.
+10. from any chosen recipe click 'Edit recipe' button and to be taken to the edit page, make changes and for these to be reflected in recipe and index pages. Test performed and true.
 
 
 <a name="version"></a>
