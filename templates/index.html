@@ -35,11 +35,12 @@
 
 <hr class="line-styling">
 
-<div class="row all-card-styling">
+<div class="container">
+    <div class="row">
   {% for Antique in allAntiques %}
-  <div class="col-sm-6 col-lg-4">
-    <div class="card card-styling">
-      <div class="card-body">
+  <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card card-styling">
+        <div class="card-body">
         <a href="{{ Antique.get_absolute_url }}"><img src=""></a>
         <h5 class="card-title text-truncate">{{ Antique.AntiqueName }}</h5>
         <h6 class="text-muted">{{Antique.Creator}}</h6>
@@ -50,5 +51,7 @@
   </div>
   {%endfor%}
 </div>
+</div>
+
 </main>
 {% endblock %}
