@@ -50,6 +50,11 @@ html{
     font-weight: bold;
 }
 
+.search-styling{
+    width:40%;
+    border-radius:5px;
+}
+
 
 /*------------* Stats section *------------*/
 .line-styling{
@@ -79,7 +84,7 @@ html{
     background-color: #6E4555;
     border-color:transparent;
     margin:5px;
-    width: 45%;
+    width: 25%;
 }
 
 .search-button:hover {
@@ -130,4 +135,5 @@ html{
     color: white;
     text-align: center;
     margin-top:auto;
+    height:40px;
 }

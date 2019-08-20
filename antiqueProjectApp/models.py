@@ -53,6 +53,7 @@ class AntiqueSale(models.Model):
     customerEmail = models.TextField(max_length=200, null=False)
     customerTelephone = models.TextField(max_length=20, null=False)
     saleDate = models.DateField(default=datetime.date.today)
+    stripeId = models.CharField(max_length=100, null=True)
     
     
     def __str__(self):

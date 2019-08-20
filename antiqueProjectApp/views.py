@@ -7,7 +7,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 import stripe
 
-stripe.api_key = settings.STRIPE_SECRET
+stripe.api_key = "sk_test_cQbzKPWU5eKkAYgPecuVIcvo00D1Fr15gu"
 
 
 def index(request):
@@ -25,12 +25,9 @@ def index(request):
         'allAntiques': Antique.objects.all(),
     }
 
-    # {"antiqueProjectApp": antiqueProjectApp})
+    
     return render(request, 'index.html', context=context)
 
-# def all_antiques(request):
-    # all_antiques = Antique.object.all
-    # return render (request, "all_antiques.html", {"all-antiques": all_antiques})
 
 
 class AntiqueListView(generic.ListView):
@@ -61,43 +58,27 @@ def IndividualSaleDetails(request, pk):
     sale = get_object_or_404(AntiqueSale, pk=pk)
     return render(request, "antique_sale_detail.html", {'sale': sale})
 
-
-# def PurchaseAnItem(request, pk=None):
-    # sale = None#get_object_or_404(AntiqueSale, pk=pk) if pk else None
-    # if request.method == "POST":
-        # form = AntiquePurchaseForm(request.POST, request.FILES, instance=sale)
-        # if form.is_valid():
-            # sale = form.save()
-            # rediretcto stripe passing the price
-            # return redirect(SaleSuccess, sale.pk)
-
- # else:
-        # sale = AntiqueSale()
-        # sale.antique = Antique(pk=pk)
-        # sale.save()
-        # form = AntiquePurchaseForm(instance=sale)
-    # return render(request, 'antique_purchase_form.html', {'form': form, 'sale':sale})
-
-
 @login_required()
 def PurchaseAnItem(request, pk=None):
-    sale = None  # get_object_or_404(AntiqueSale, pk=pk) if pk else None
-    if request.method == "POST":
+    sale = None
+    form = AntiquePurchaseForm(instance=sale)
+    return render(request, 'antique_purchase_form.html', {'form': form})
+
+@login_required()
+def charge(request):
+    sale = None
+    if request.method == 'POST':
         form = AntiquePurchaseForm(request.POST, request.FILES, instance=sale)
         if form.is_valid():
             sale = form.save()
-            return redirect(SaleSuccess, sale.pk)
-    else:
-        form = AntiquePurchaseForm(instance=sale)
-    return render(request, 'antique_purchase_form.html', {'form': form})
-
-def charge(request):
-    if request.method == 'POST':
+            sale.stripeId=request.POST['stripeToken']
+            sale.save()
         charge = stripe.Charge.create(
             amount=500,
-            currency='GDP',
+            currency='GBP',
             description='A Django charge',
-            source=request.POST['stripeToken']
+            source=request.POST['stripeToken'],
+            
         )
         return render(request, 'charge.html')
 

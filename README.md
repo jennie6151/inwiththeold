@@ -115,10 +115,11 @@ These features have not been included in stage 1 of development but would be imp
 
 ## User stories as part of testing
 As a user I want to...
-1. search 'chicken' and see 5 recipes. Test performed and true.
-2. search 'Lankan' and see 1 recipe of 'Sri Lankan fried chicken' and click on the result and it to open the recipe page. Test performed and true.
-3. search 'pizza' and find 'Fresh topped pizza' and then from the Search Results page type 'BBQ' and my search to be updated. Test performed and true.
-4. search 'frog' and find 0 recipes and a warning message. Test performed and true.
+1. search 'eight' and see 1 antique ("Eight flow blue cabinet plates") appear. Test performed and true.
+2. search 'skater' and see 1 antique of ("Bunnykins - Boy Skater") and click on the result and it to open the antique details page. Test performed and true.
+3. search 'royal' and find 'Fresh topped pizza' and then from the Search Results page type 'BBQ' and my search to be updated. Test performed and true.
+4. search 'royal' and find results from both 
+4. search 'donkey' and find 0 recipes and a warning message. Test performed and true.
 5. click on "Low-fat" from the dropdown filter and see 3 results. Test performed and true.
 6. click on the 'Add recipe' button and be able to add a recipe and for the mandatory fields to stop form submission if not completed. Recipe to appear on the index page in a new card. Test performed and true.
 7. search 'soup' and use the 'Sort by' dropdown to change between alphabetical listing (ascending) or by number of likes (descending). Test performed and true.
