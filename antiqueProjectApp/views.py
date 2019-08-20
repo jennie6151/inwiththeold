@@ -2,7 +2,7 @@ from django.views import generic
 from django.shortcuts import render, HttpResponse, get_object_or_404, redirect
 from django.utils import timezone
 from antiqueProjectApp.models import Antique, Creator, AntiqueType, AntiqueSale
-from antiqueProjectApp.forms import AntiquePurchaseForm, MakePaymentForm
+from antiqueProjectApp.forms import AntiquePurchaseForm
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 import stripe
