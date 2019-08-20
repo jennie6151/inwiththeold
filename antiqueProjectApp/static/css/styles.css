@@ -131,6 +131,11 @@ html{
     margin:12px;
 }
 
+.no-antiques-here{
+    color: #543540;
+    text-align:center;
+}
+
 
 /*------------* Footer *------------*/
 .footer-styling {

@@ -10,10 +10,10 @@
   <div class="container">
     <div class="row">
         {% for Antique in antique_list %}
-      <div class="col-sm-12 col-lg-6">
+        <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="card card-styling">
           <div class="card-body">
-            <a href="{{ Antique.get_absolute_url }}"><img src=""></a>
+            <a href="{{ Antique.get_absolute_url }}"><img class="antique-image-styling" src="{{ Antique.AntiqueImage }}" alt="">
             <h5 class="card-title text-truncate">{{ Antique.AntiqueName }}</h5>
             <h6 class="text-muted">{{Antique.Creator}}</h6>
             <h6 class="text-muted">£{{Antique.Price}}</h6>
@@ -27,7 +27,7 @@
   
 </ul>
 {% else %}
-<p>There are no antiques to see here.</p>
+<h3 style="text-align: center">There are no antiques to see here. Please go back and try another search.</h3>
 {% endif %}
 
 {% endblock %}

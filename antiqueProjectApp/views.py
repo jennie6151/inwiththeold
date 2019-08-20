@@ -32,7 +32,7 @@ def index(request):
 
 class AntiqueListView(generic.ListView):
     model = Antique
-    paginate_by = 2
+    paginate_by = 12
 
 
 class AntiqueDetailView(generic.DetailView):
@@ -41,12 +41,12 @@ class AntiqueDetailView(generic.DetailView):
 
 class CreatorListView(generic.ListView):
     model = Creator
-    paginate_by = 2
+    paginate_by = 12
 
 
 class CreatorDetailView(generic.DetailView):
     model = Creator
-    paginate_by = 2
+    paginate_by = 12
 
 
 def GetAllSales(request):
