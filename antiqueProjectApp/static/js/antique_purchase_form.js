@@ -1,4 +1,4 @@
-//JS functionality to show live pay button once paymentForm is valid
+//js functionality to show live pay button once paymentForm is valid
 
 $(document).ready(function(){
          
