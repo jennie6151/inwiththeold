@@ -64,7 +64,7 @@ def PurchaseAnItem(request, pk=None):
     sale = AntiqueSale()
     sale.antique = Antique.objects.get(pk=pk)
     form = AntiquePurchaseForm(instance=sale)
-    return render(request, 'antique_purchase_form.html', {'form': form})
+    return render(request, 'antique_purchase_form.html', {'form': form, 'sale': sale})
 
 @login_required()
 def charge(request):
@@ -76,9 +76,9 @@ def charge(request):
             sale.stripeId=request.POST['stripeToken']
             sale.save()
         charge = stripe.Charge.create(
-            amount=500,
-            currency='GBP',
-            description='A Django charge',
+            amount=int(sale.antique.Price * 100),
+            currency='gbp',
+            description='In with the old payment',
             source=request.POST['stripeToken'],
             
         )

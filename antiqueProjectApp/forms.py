@@ -6,3 +6,4 @@ class AntiquePurchaseForm(forms.ModelForm):
         model = AntiqueSale
         fields = ('antique', 'customerFirstName', 'customerLastName', 'customerAddressLine1', 'customerAddressLine2',
                   'customerAddressCity', 'customerAddressCounty', 'customerAddressPostcode', 'customerEmail', 'customerTelephone')
+        widgets = {'antique': forms.HiddenInput()}

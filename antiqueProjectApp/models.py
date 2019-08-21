@@ -30,7 +30,10 @@ class Antique(models.Model):
 
     def display_AntiqueType(self):
         return ', '.join(AntiqueType.name for AntiqueType in self.AntiqueType.all()[:3])
-    
+
+    def price_in_pence(self):
+        return self.Price * 100
+
     display_AntiqueType.short_description = 'AntiqueType'
 
 import uuid

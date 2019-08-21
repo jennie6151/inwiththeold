@@ -1,7 +1,7 @@
 {% extends 'base_generic.html' %}
 {% load bootstrap_tags %}
 {% block content %}
-<h1>{{ sale.saleDate }}</h1>
+
 
 <form id="paymentForm" action="{% url 'charge' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
@@ -12,9 +12,9 @@
     <div id="pay-button">
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="pk_test_wVnqiAuvtJjIgZzbgIEM3vYi00LRtER6Dy"
-        data-description="A Django Charge"
-        data-amount="500"
-        data-locale="auto">
+        data-description="In with the old payment"
+        data-amount="{{ sale.antique.price_in_pence }}"
+        data-currency="gbp">
     </script>
     </div>
     </div>
