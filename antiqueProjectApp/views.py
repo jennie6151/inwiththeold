@@ -61,6 +61,8 @@ def IndividualSaleDetails(request, pk):
 @login_required()
 def PurchaseAnItem(request, pk=None):
     sale = None
+    sale = AntiqueSale()
+    sale.antique = Antique.objects.get(pk=pk)
     form = AntiquePurchaseForm(instance=sale)
     return render(request, 'antique_purchase_form.html', {'form': form})
 
