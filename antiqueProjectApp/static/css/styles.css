@@ -137,6 +137,13 @@ html{
 }
 
 
+/*------------* antique_detail *------------*/
+    .antique-detail-image-styling{
+        height: 30vh;
+        object-fit: cover;
+    }
+
+
 /*------------* Footer *------------*/
 .footer-styling {
     left: 0;

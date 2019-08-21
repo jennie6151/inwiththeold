@@ -1,3 +1,5 @@
+//JS functionality to show live pay button once paymentForm is valid
+
 $(document).ready(function(){
          
     $('#pay-button').hide();
