@@ -6,5 +6,7 @@ script:
     - SECRET_KEY="placeholder" ./manage.py test
 env:
     - MYSQL_USERNAME=root MYSQL_DATABASENAME="" MYSQL_PASSWORD="" MYSQL_HOST=127.0.0.1 STRIPE_SECRET="" STRIPE_PUBLISHABLE=""
+services:
+    - mysql
 notifications:
   email: false
