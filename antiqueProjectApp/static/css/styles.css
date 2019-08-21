@@ -143,6 +143,13 @@ html{
         object-fit: cover;
     }
 
+/*------------* payments *------------*/
+    .payment-made-styling{
+        color: #6E4555;
+        margin:10px;
+    }
+
+
 
 /*------------* Footer *------------*/
 .footer-styling {

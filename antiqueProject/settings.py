@@ -12,8 +12,14 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
-if os.path.exists('env.py'):
-    import env
+import environ
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, True) 
+)
+# reading .env file
+environ.Env.read_env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,8 +30,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
-MYSQL_NAME = os.getenv('MYSQL_NAME')
-print(MYSQL_NAME)
+ 
+ 
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -92,10 +99,10 @@ WSGI_APPLICATION = 'antiqueProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '3BKqHLGEeY',
-        'USER': '3BKqHLGEeY',
-        'PASSWORD': 'k2tNFe1twM',
-        'HOST': 'remotemysql.com',
+        'NAME': env('MYSQL_DATABASENAME'),
+        'USER': env('MYSQL_USERNAME'),
+        'PASSWORD': env('MYSQL_PASSWORD'),
+        'HOST': env('MYSQL_HOST'),
         'PORT': '3306',
     }
 }
@@ -151,8 +158,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
-STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = env('STRIPE_SECRET')
 
 # Redirects home after login
 LOGIN_REDIRECT_URL = 'home'

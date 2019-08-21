@@ -2,22 +2,36 @@
 {% load bootstrap_tags %}
 {% block content %}
 
+<div class="container-fluid">
+    <div class="row">
+            <div class="col-xs-12">
+                    <a href="{{ sale.antique.get_absolute_url }}"><img class="antique-detail-image-styling"
+                            src="{{ sale.antique.AntiqueImage }}" alt="{{ Antique.AntiqueName }}"></a>
+                </div>
+        <div class="col-xs-12">
+            <p><strong>Antique:</strong> {{ sale.antique.AntiqueName }}
+            </p>
+            <p><strong>Creator:</strong> {{ sale.antique.Creator }}
+            </p>
+            <p><strong>£{{ sale.antique.Price }}</strong></p>
+        </div>
+        
+    </div>
+</div>
 
 <form id="paymentForm" action="{% url 'charge' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form | as_bootstrap }}
-   <div id="disabled-pay">
-       <button class="btn-default" disabled>Pay with card</button>
-   </div>
+    <div id="disabled-pay">
+        <button class="btn-default" disabled>Pay with card</button>
+    </div>
     <div id="pay-button">
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="pk_test_wVnqiAuvtJjIgZzbgIEM3vYi00LRtER6Dy"
-        data-description="In with the old payment"
-        data-amount="{{ sale.antique.price_in_pence }}"
-        data-currency="gbp">
-    </script>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="{{key}}" data-description="In with the old payment"
+            data-amount="{{ sale.antique.price_in_pence }}" data-currency="gbp">
+            </script>
     </div>
     </div>
-    
+
 </form>
-{% endblock %}
+{% endblock %}  

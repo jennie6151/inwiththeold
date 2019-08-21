@@ -64,7 +64,8 @@ def PurchaseAnItem(request, pk=None):
     sale = AntiqueSale()
     sale.antique = Antique.objects.get(pk=pk)
     form = AntiquePurchaseForm(instance=sale)
-    return render(request, 'antique_purchase_form.html', {'form': form, 'sale': sale})
+    key  = settings.STRIPE_PUBLISHABLE_KEY
+    return render(request, 'antique_purchase_form.html', {'form': form, 'sale': sale,'key':key})
 
 @login_required()
 def charge(request):
@@ -82,7 +83,7 @@ def charge(request):
             source=request.POST['stripeToken'],
             
         )
-        return render(request, 'charge.html')
+        return render(request, 'charge.html', {'sale': sale})
 
 
 
