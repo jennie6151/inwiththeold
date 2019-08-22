@@ -14,9 +14,10 @@ This project is licensed under the MIT License - see the [license.txt](license.t
 2. [Deployment](#deploy)
 3. [Features](#features)
 4. [Technology used](#tech)
-5. [Testing](#testing)
-6. [Versioning](#version)
-7. [Acknowledgements and credits](#credits)
+5. [Using Stripe payment](#stripe)
+6. [Testing](#testing)
+7. [Versioning](#version)
+8. [Acknowledgements and credits](#credits)
 
 <a name="overview"></a>
 
@@ -77,7 +78,15 @@ The site is styled with **Bootstrap** and I have made the site responsive so use
 
 ### Features left to implement
 These features have not been included in stage 1 of development but would be implemented in future developments:
-* Shopping cart feature was deemed unnecessary for first release as people buying antiques aren't likely to purchase multiple but this feature would be included in stage 2. 
+* Shopping cart feature was deemed unnecessary for first release as people buying antiques aren't likely to purchase multiple but this feature would be included in stage 2.
+
+<a name="stripe"></a>
+
+## Instructions for using Stripe in test mode
+You can not use genuine card information in Stripe test mode. Here is a test card that is widely accepted for Stripe test mode:
+* Credit card number: 4242 4242 4242 4242
+* Expiration date: any date in the future with the format MM/YY
+* CVC: any 3-digits number
 
 
 <a name="tech"></a>
@@ -92,6 +101,8 @@ These features have not been included in stage 1 of development but would be imp
     * Code editor used to write above code
 * [MySQL](https://www.mysql.com/)
     * Database program used
+* [Remote MySQL](https://remotemysql.com/)
+    * Cloud hosted version of MySQL used to store the data
 * [Stripe](https://stripe.com/gb)
     * Used for online payment processing
 * [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
