@@ -19,6 +19,7 @@
   {% endblock head_js %}
 </head>
 
+<!--Navbar-->
 <body class="body-styling body-font-styling">
   <nav class="navbar navbar-expand-lg navbar-dark navbar-styling">
     <a class="navbar-brand logo-styling" href="{% url 'index' %}">In with the old</a>
@@ -40,6 +41,7 @@
         </li>
       </ul>
 
+<!--Authentication: Users will need to login/signup before they are able to pay for an item-->
       {% if user.is_authenticated %}
       <p><a href="{% url 'logout' %}?next={{request.path}}" class="btn btn-md btn-info" role="button">Logout</a></p>
       {% else %}
@@ -48,13 +50,14 @@
       <a href="{% url 'signup' %}?next={{request.path}}" class="btn btn-success homepage-button" role="button">Sign
         up</a>
       {% endif %}
-
-
-    </div>
+<!--End of authentication-->
+      </div>
   </nav>
+<!--End of navbar-->
 
   <div>{% block content %}{% endblock %}
 
+<!--Page pagination: amount of items shown can be amended in views.py (antiqueProjectApp)-->
     {% block pagination %}
     {% if is_paginated %}
     <div class="pagination">
@@ -72,14 +75,18 @@
     </div>
     {% endif %}
     {% endblock %}
+<!--End of pagniation-->
 
   </div>
   </div>
   </div>
 
+<!--Footer-->
   <div class="footer-styling">
     <p>&copy; Copyright 2019 Jennifer Dick</p>
   </div>
+<!--End of footer-->
+
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

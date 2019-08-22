@@ -1,57 +1,66 @@
 {% extends "base_generic.html" %}
-{% block content %} 
+{% block content %}
 
 <main>
-<section class="jumbotron text-center jumbotron-styling">
+  <section class="jumbotron text-center jumbotron-styling">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 mx-auto">
+          <h1 class="jumbotron-heading-styling">In with the old</h1>
+          <h4 class="jumbotron-subheading-styling">The home of quality antiques and collectables</h4>
+        </div>
+      </div>
+      <form action="{% url 'search' %}" method="GET">
+        <div class="col-lg-12 mx-auto">
+          <input type="text" name="q" placeholder="Search for an antique or creator" class="search-styling" />
+        </div>
+        <div><button type="submit" class="btn btn-info search-button">Search</button></div>
+      </form>
+    </div>
+  </section>
+
+  <hr class="line-styling">
+
+<!--Stats section: pulling username and antique counts from the database-->
+  <article class="stats-styling">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h5>Welcome {{ user.username }}</h5>
+          <p>You have visited this homepage a total of {{ numVisits }}{% if numVisits == 1 %} time{% else %}
+            times{% endif %}.
+          </p>
+          <p><span class="logo-styling">In with the old</span> currently has the following record counts:</p>
+          <ul class="bullet-styling">
+            <li>Antiques: {{ numAntiques }}</li>
+            <li>Creators: {{ numCreators }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr class="line-styling">
+
+<!--Bootstrap cards: used to display 'Antiques' site-wide-->
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 mx-auto">
-        <h1 class="jumbotron-heading-styling">In with the old</h1>
-        <h4 class="jumbotron-subheading-styling">The home of quality antiques and collectables</h4>
+      {% for Antique in allAntiques %}
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="card card-styling">
+          <div class="card-body">
+            <a href="{{ Antique.get_absolute_url }}"><img class="antique-image-styling" src="{{ Antique.AntiqueImage }}"
+                alt="{{ Antique.AntiqueName }}"></a>
+            <h5 class="card-title text-truncate">{{ Antique.AntiqueName }}</h5>
+            <h6 class="text-muted">{{Antique.Creator}}</h6>
+            <h6 class="text-muted">£{{Antique.Price}}</h6>
+            <a href="{{ Antique.get_absolute_url }}" class="btn btn-info more-info-button btn-block">More info</a>
+          </div>
+        </div>
       </div>
-    </div>
-    <form action="{% url 'search' %}" method="GET">
-      <div class="col-lg-12 mx-auto">
-        <input type="text" name="q" placeholder="Search for an antique or creator" class="search-styling"/>
-      </div>
-      <div><button type="submit" class="btn btn-info search-button">Search</button></div>
-    </form>
-  </div>
-</section>
-
-<hr class="line-styling">
-
-<article class="stats-styling">
-  <h5>Welcome {{ user.username }}</h5>
-  <p>You have visited this homepage a total of {{ numVisits }}{% if numVisits == 1 %} time{% else %} times{% endif %}.
-  </p>
-
-  <p><span class="logo-styling">In with the old</span> currently has the following record counts:</p>
-  <ul class="bullet-styling">
-    <li>Antiques: {{ numAntiques }}</li>
-    <li>Creators: {{ numCreators }}</li>
-  </ul>
-</article>
-
-<hr class="line-styling">
-
-<div class="container">
-    <div class="row">
-  {% for Antique in allAntiques %}
-  <div class="col-sm-12 col-md-6 col-lg-4">
-      <div class="card card-styling">
-        <div class="card-body">
-        <a href="{{ Antique.get_absolute_url }}"><img class="antique-image-styling" src="{{ Antique.AntiqueImage }}" alt="{{ Antique.AntiqueName }}"></a>
-        <h5 class="card-title text-truncate">{{ Antique.AntiqueName }}</h5>
-        <h6 class="text-muted">{{Antique.Creator}}</h6>
-        <h6 class="text-muted">£{{Antique.Price}}</h6>
-        <a href="{{ Antique.get_absolute_url }}" class="btn btn-info more-info-button btn-block">More info</a>
-      </div>
+      {%endfor%}
     </div>
   </div>
-  {%endfor%}
-</div>
-</div>
 
 </main>
 {% endblock %}

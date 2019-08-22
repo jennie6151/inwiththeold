@@ -2,6 +2,7 @@
 {% load bootstrap_tags %}
 {% block content %}
 
+<!--Payment summary: to give payment/delivery form context-->
 <div class="container-fluid">
     <div class="row sale-summary-styling">
         <div class="col-xs-12">
@@ -24,6 +25,7 @@
     </div>
 </div>
 
+<!--Payment form is a Django form: some css added to beautify-->
 <div class="container">
     <div class="row">
         <div class="col-lg-10">
@@ -34,6 +36,7 @@
                     <button class="btn-default" disabled>Pay with card</button>
                 </div>
                 <div id="pay-button">
+                    <!--Stripe payment provided by Stripe-->
                     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{key}}"
                         data-description="In with the old payment" data-amount="{{ sale.antique.price_in_pence }}"
                         data-currency="gbp">

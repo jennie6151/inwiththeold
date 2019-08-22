@@ -1,22 +1,33 @@
 {% extends 'base_generic.html' %}
 {% block content %}
 
-<h3 class="payment-made-styling">Thank you! We have successfully received your payment.<br/>The details of your purchase are below</h3>
-
 <div class="container-fluid">
+        <div class="row sale-summary-styling">
+                <div class="col-xs-12">
+                        <h3>Thank you! We have successfully received your payment.<br />The
+                                details of your
+                                purchase are below</h3>
+                </div>
+        </div>
         <div class="row">
                 <div class="col-xs-12">
                         <a href="{{ sale.antique.get_absolute_url }}"><img class="antique-detail-image-styling"
-                                src="{{ sale.antique.AntiqueImage }}" alt="{{ Antique.AntiqueName }}"></a>
-                    </div>
-            <div class="col-xs-12">
-                <p><strong>Antique:</strong> {{ sale.antique.AntiqueName }}
-                </p>
-                <p><strong>Creator:</strong> {{ sale.antique.Creator }}
-                </p>
-                <p><strong>£{{ sale.antique.Price }}</strong></p>
-            </div>
-            
+                                        src="{{ sale.antique.AntiqueImage }}" alt="{{ Antique.AntiqueName }}"></a>
+                </div>
+                <div class="col-xs-12">
+                        <p><strong>Antique:</strong> {{ sale.antique.AntiqueName }}
+                        </p>
+                        <p><strong>Creator:</strong> {{ sale.antique.Creator }}
+                        </p>
+                        <p><strong>£{{ sale.antique.Price }}</strong></p>
+                </div>
         </div>
-    </div>
-    {% endblock %}
+        <div class="row">
+        <div class="col-xs-12">
+                <a href="{% url 'index' %}" class="btn btn-info homepage-button"
+                        role="button">Return to homepage</a>
+        </div>
+        </div>
+</div>
+
+{% endblock %}
