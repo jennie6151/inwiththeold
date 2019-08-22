@@ -145,6 +145,13 @@ html{
     }
 
 
+/*------------* creator_list *------------*/
+    .creator-list-styling a{
+        color:#6E4555;
+        background-color:#bada55;
+
+    }
+
 /*------------* payments *------------*/
     .sale-summary-styling{
         font-size: 20px;

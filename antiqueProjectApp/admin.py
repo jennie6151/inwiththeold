@@ -2,10 +2,8 @@ from django.contrib import admin
 from antiqueProjectApp.models import Creator, AntiqueType, Antique, AntiqueSale
 from antiqueProjectApp.models import AntiqueSale
 
-# admin.site.register(Antique)
 admin.site.register(Creator)
 admin.site.register(AntiqueType)
-#admin.site.register(AntiqueSale)
 
 
 @admin.register(Antique)

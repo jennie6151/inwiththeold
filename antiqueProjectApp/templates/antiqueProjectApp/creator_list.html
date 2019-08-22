@@ -7,8 +7,9 @@
   {% if creator_list %}
   <ul>
     {% for Creator in creator_list %}
-      <li>
+      <li class="creator-list-styling">
             <a href="{{ Creator.get_absolute_url }}">{{ Creator.CreatorName }}</a>
+      </li>
     {% endfor %}
   </ul>
   {% else %}

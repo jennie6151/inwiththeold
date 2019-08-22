@@ -5,9 +5,8 @@
 <h2 class="antique-list-heading">Search results</h2>
 
 {% if antique_list %}
-
+<!--Similar to card code on index.html but reduced to search content-->
 <ul>
-  
     <div class="container">
       <div class="row">
           {% for Antique in antique_list %}
@@ -28,6 +27,7 @@
     
   </ul>
 {% else %}
+<!--If no results found-->
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
