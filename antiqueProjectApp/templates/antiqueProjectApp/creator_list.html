@@ -2,16 +2,17 @@
 
 {% block content %}
 
-  <h1>Catalogue of creators</h1>
+  <h1 class="antique-list-heading">Catalogue of creators</h1>
   
   {% if creator_list %}
-  <ul>
+  <ul class="creator-list-styling">
     {% for Creator in creator_list %}
-      <li class="creator-list-styling">
+      <li>
             <a href="{{ Creator.get_absolute_url }}">{{ Creator.CreatorName }}</a>
       </li>
     {% endfor %}
   </ul>
+  
   {% else %}
     <p>There are no creators or collections to see here.</p>
   {% endif %}       

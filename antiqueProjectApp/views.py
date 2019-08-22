@@ -16,7 +16,6 @@ def index(request):
     numCreators = Creator.objects.count()
     numVisits = request.session.get('numVisits', 0)
     request.session['numVisits'] = numVisits + 1
-    # antiqueProjectApp = Antique.objects.all
 
     context = {
         'numAntiques': numAntiques,
@@ -29,35 +28,26 @@ def index(request):
     return render(request, 'index.html', context=context)
 
 
-
+#This generates the antiques list page
 class AntiqueListView(generic.ListView):
     model = Antique
     paginate_by = 12
 
-
+#This generates the antiques detail page
 class AntiqueDetailView(generic.DetailView):
     model = Antique
 
-
+#This generates the creators list page
 class CreatorListView(generic.ListView):
     model = Creator
     paginate_by = 12
 
-
+#This generates the creators detail page
 class CreatorDetailView(generic.DetailView):
     model = Creator
     paginate_by = 12
 
-
-def GetAllSales(request):
-    sales = AntiqueSale.objects.order_by('-saleDate')
-    return render(request, "sales_list.html", {'sales': sales})
-
-
-def IndividualSaleDetails(request, pk):
-    sale = get_object_or_404(AntiqueSale, pk=pk)
-    return render(request, "antique_sale_detail.html", {'sale': sale})
-
+#To get the Purchase form on the screen. A user must be logged in to purchase.
 @login_required()
 def PurchaseAnItem(request, pk=None):
     sale = None
@@ -67,6 +57,7 @@ def PurchaseAnItem(request, pk=None):
     key  = settings.STRIPE_PUBLISHABLE_KEY
     return render(request, 'antique_purchase_form.html', {'form': form, 'sale': sale,'key':key})
 
+#To process the payment.
 @login_required()
 def charge(request):
     sale = None

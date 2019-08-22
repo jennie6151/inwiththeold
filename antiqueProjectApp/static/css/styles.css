@@ -146,10 +146,14 @@ html{
 
 
 /*------------* creator_list *------------*/
+    .creator-list-styling{
+        list-style-type: none;
+}
+
     .creator-list-styling a{
         color:#6E4555;
-        background-color:#bada55;
-
+        margin:10px;
+        font-size:20px;
     }
 
 /*------------* payments *------------*/
