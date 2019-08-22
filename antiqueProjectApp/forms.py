@@ -9,5 +9,5 @@ class AntiquePurchaseForm(forms.ModelForm):
                   'customerAddressCity', 'customerAddressCounty', 'customerAddressPostcode', 'customerEmail', 'customerTelephone')
         widgets = {'antique': forms.HiddenInput()}
         labels = {
-            'customerFirstName': 'First name', 'customerLastName': 'Last name', 'customerAddressLine1': 'Address line 1', 'customerAddressLine2': 'Address line 2', 'customerAddressCity': 'City', 'customerAddressCounty': 'County', 'customerAddressPostcode': 'Postal code', 'customerEmail': 'Email address', 'customerTelephone': 'Telephone number',
+            'customerFirstName': 'First name*', 'customerLastName': 'Last name*', 'customerAddressLine1': 'Address line 1*', 'customerAddressLine2': 'Address line 2*', 'customerAddressCity': 'City*', 'customerAddressCounty': 'County*', 'customerAddressPostcode': 'Postal code*', 'customerEmail': 'Email address*', 'customerTelephone': 'Telephone number*',
         }

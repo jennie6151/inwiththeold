@@ -75,7 +75,6 @@ The site is styled with **Bootstrap** and I have made the site responsive so use
 * User friendly payment form
 * Payment functionality supplied by Stripe
 
-
 ### Features left to implement
 These features have not been included in stage 1 of development but would be implemented in future developments:
 * Shopping cart feature was deemed unnecessary for first release as people buying antiques aren't likely to purchase multiple but this feature would be included in stage 2.
@@ -147,8 +146,7 @@ As a user I want to...
 6. click on "Low-fat" from the dropdown filter and see 3 results. Test performed and true.
 7. click on "Signup" and be prompted to enter a username and password and then be sent to the login screen and login successfully. Test performed and true.
 8. click on "Logout" and successfully log out. Test performed and true.
-9. click on "Purchase item" and be taken through to Stripe payment, click to enter details manually. Enter email: admin@example.com, account number: 4242 4242 4242 4242, expiry date: 11/20, CVC:123. And a successful test payment to be made. Test performed and true.
-
+9. click on "Purchase item" and be taken through to Stripe payment, click to enter details manually. Enter email: admin@example.com, account number: 4242 4242 4242 4242, expiry date: 11/20, CVC:123. A successful test payment is made. Test performed and true.
 
 <a name="version"></a>
 
@@ -158,13 +156,12 @@ I used **Git** for versioning on this project, hosted **Git** on **Github**. Hos
 <a name="credits"></a>
 
 ## Acknowledgments/credits
+* *www.rubylane.com* - All media content comes from this site.
 * *Antonija Šimić* - Code Institute mentor.
 * *Paul Lewis* - colleague (Software Developer) who tested finished site.
 * *Mallory Bemrose* - colleague who tested finished site.
 * *Michael Skelton* - family who tested finished site. 
 * *Code Institute tutors* - for support with deployment to Heroku, secret keys/environment variables and search functionality.
-
-## Commands to remember
 
 #### *MIT © 2019 Jennifer Dick*
 

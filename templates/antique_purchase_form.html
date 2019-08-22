@@ -3,35 +3,45 @@
 {% block content %}
 
 <div class="container-fluid">
-    <div class="row">
-            <div class="col-xs-12">
-                    <a href="{{ sale.antique.get_absolute_url }}"><img class="antique-detail-image-styling"
-                            src="{{ sale.antique.AntiqueImage }}" alt="{{ Antique.AntiqueName }}"></a>
-                </div>
+    <div class="row sale-summary-styling">
         <div class="col-xs-12">
+            <a href="{{ sale.antique.get_absolute_url }}"><img class="antique-detail-image-styling"
+                    src="{{ sale.antique.AntiqueImage }}" alt="{{ Antique.AntiqueName }}"></a>
+        </div>
+        <div class="col-xs-12 sale-summary-text">
+            <p>You are about to purchase:</p>
             <p><strong>Antique:</strong> {{ sale.antique.AntiqueName }}
             </p>
             <p><strong>Creator:</strong> {{ sale.antique.Creator }}
             </p>
             <p><strong>£{{ sale.antique.Price }}</strong></p>
         </div>
-        
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2 col-xs-12">
+    <p>Please fill in the delivery details below before proceeding to the payment screen</p>
+        </div>
     </div>
 </div>
 
-<form id="paymentForm" action="{% url 'charge' %}" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form | as_bootstrap }}
-    <div id="disabled-pay">
-        <button class="btn-default" disabled>Pay with card</button>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10">
+            <form id="paymentForm" action="{% url 'charge' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | as_bootstrap }}
+                <div id="disabled-pay">
+                    <button class="btn-default" disabled>Pay with card</button>
+                </div>
+                <div id="pay-button">
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{key}}"
+                        data-description="In with the old payment" data-amount="{{ sale.antique.price_in_pence }}"
+                        data-currency="gbp">
+                        </script>
+                </div>
+        </div>
     </div>
-    <div id="pay-button">
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="{{key}}" data-description="In with the old payment"
-            data-amount="{{ sale.antique.price_in_pence }}" data-currency="gbp">
-            </script>
-    </div>
-    </div>
-
+</div>
 </form>
-{% endblock %}  
+</div>
+{% endblock %}

@@ -141,14 +141,27 @@ html{
     .antique-detail-image-styling{
         height: 30vh;
         object-fit: cover;
+        margin:10px;
     }
 
+
 /*------------* payments *------------*/
+    .sale-summary-styling{
+        font-size: 20px;
+        color: #E6E1C5;
+        background-color:#6E4555;
+        padding:20px;
+        margin-bottom:20px;
+}
+
     .payment-made-styling{
         color: #6E4555;
         margin:10px;
     }
 
+    .sale-summary-text{
+        margin:40px;
+    }
 
 
 /*------------* Footer *------------*/

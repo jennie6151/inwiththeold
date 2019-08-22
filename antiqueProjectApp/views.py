@@ -7,7 +7,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 import stripe
 
-stripe.api_key = "sk_test_cQbzKPWU5eKkAYgPecuVIcvo00D1Fr15gu"
+stripe.api_key = settings.STRIPE_SECRET
 
 
 def index(request):
@@ -22,7 +22,7 @@ def index(request):
         'numAntiques': numAntiques,
         'numCreators': numCreators,
         'numVisits': numVisits,
-        'allAntiques': Antique.objects.all(),
+        'allAntiques': Antique.objects.all().order_by('AntiqueName')
     }
 
     
