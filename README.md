@@ -39,7 +39,7 @@ This website is motivated by the brief provided by [The Code Institute](https://
 * Search for an antique by name or creator
 * Read information on the product
 * See an image of the product
-* Login or signup to access authorisation to purchase
+* Login or sign up to access authorisation to purchase
 * Purchase an antique
 
 ### How does it work?
@@ -68,7 +68,7 @@ The site is styled with **Bootstrap** and I have made the site responsive so use
 ## Features
 
 * Eye catching index page
-* Authentication. Signup, Login and Logout functionality meaning only members who have signed up can purchase an antique 
+* Authentication. Sign up, Login and Logout functionality meaning only members who have signed up can purchase an antique 
 * Large easy to see and use search box
 * Antique and creator statistics from across the site on the homepage
 * Clear search result
@@ -135,7 +135,7 @@ If you do not wish to create a new user this is an existing user:
 
 ## Instructions given to testers
 1. Please click on the heroku url and have a trial browse and attempt to buy an item (this should fail).
-2. Select the "Signup" button and create a username and password (or use the details above).
+2. Select the "Sign up" button and create a username and password (or use the details above).
 3. Thoroughly test the site (try and break it).
 4. Select an item and click "Purchase item".
 5. You should then be presented with a form for payment, fill this in with fictional details.
@@ -154,7 +154,7 @@ As a user I want to...
 3. search 'beswick' and see antiques from "Beswick" and then from the Search Results page type 'Bristol' and my search to be updated. Test performed and true.
 4. search 'royal' and see antiques from "Royal Doulton" and "Royal Albert". Test performed and true.
 5. search 'donkey' and find 0 recipes and a warning message. Test performed and true.
-6. click on "Signup" and be prompted to enter a username and password and then be sent to the login screen and login successfully. Test performed and true.
+6. click on "Sign up" and be prompted to enter a username and password and then be sent to the login screen and login successfully. Test performed and true.
 7. click on "Logout" and successfully log out. Test performed and true.
 8. click on "Purchase item" and be taken through to Stripe payment, click to enter details manually. Enter email: admin@example.com, account number: 4242 4242 4242 4242, expiry date: 11/20, CVC:123. A successful test payment is made. Test performed and true.
 
