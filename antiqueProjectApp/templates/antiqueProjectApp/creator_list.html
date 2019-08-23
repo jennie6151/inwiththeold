@@ -8,10 +8,12 @@
     {% if creator_list %}
     {% for Creator in creator_list %}
     <div class="col-sm-4">
-      <div class="card">
+      <div class="card card-styling">
         <div class="card-body">
-          <h4 class="card-title">
-            <a href="{{ Creator.get_absolute_url }}">{{ Creator.CreatorName }}</a>
+          <h4 class="card-title creator-list-styling">
+            {{ Creator.CreatorName }} <br />
+            <br /><a href="{{ Creator.get_absolute_url }}" class="btn btn-info more-info-button btn-block">See
+              collection</a>
           </h4>
         </div>
       </div>

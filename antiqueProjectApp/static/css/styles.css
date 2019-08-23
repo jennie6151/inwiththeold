@@ -148,13 +148,10 @@ html{
 /*------------* creator_list *------------*/
     .creator-list-styling{
         list-style-type: none;
+        text-align:center;
+        font-size:20px;
 }
 
-    .creator-list-styling a{
-        color:#6E4555;
-        margin:10px;
-        font-size:20px;
-    }
 
 /*------------* payments *------------*/
     .sale-summary-styling{
