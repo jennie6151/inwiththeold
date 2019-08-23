@@ -119,6 +119,7 @@ These features have not been included in stage 1 of development but would be imp
 * Automated testing was completed using **Travis**.
 * HTML code checked via a [HTML code validator](https://validator.w3.org/)
 * CSS code checked via a [CSS code validator](https://jigsaw.w3.org/css-validator/)
+* JS code checked via a [JS code validator](https://jshint.com/)
 * Asked colleagues, friends and family to check this site and access from their own devices; any small changes were made and committed.
 * Used a [website response tool](https://www.responsinator.com) to test how well the website responded to different device sizes.
 *  Checked every feature worked (and looked consistent) in:
