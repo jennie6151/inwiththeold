@@ -15,8 +15,9 @@ This project is licensed under the MIT License - see the [license.txt](license.t
 3. [Features](#features)
 4. [Technology used](#tech)
 5. [Testing (including tester instructions on site and Stripe payment and user stories)](#testing)
-6. [Versioning](#version)
-7. [Acknowledgements and credits](#credits)
+6. [Known bugs](#bugs)
+7. [Versioning](#version)
+8. [Acknowledgements and credits](#credits)
 
 <a name="overview"></a>
 
@@ -153,10 +154,14 @@ As a user I want to...
 3. search 'beswick' and see antiques from "Beswick" and then from the Search Results page type 'Bristol' and my search to be updated. Test performed and true.
 4. search 'royal' and see antiques from "Royal Doulton" and "Royal Albert". Test performed and true.
 5. search 'donkey' and find 0 recipes and a warning message. Test performed and true.
-6. click on "Low-fat" from the dropdown filter and see 3 results. Test performed and true.
-7. click on "Signup" and be prompted to enter a username and password and then be sent to the login screen and login successfully. Test performed and true.
-8. click on "Logout" and successfully log out. Test performed and true.
-9. click on "Purchase item" and be taken through to Stripe payment, click to enter details manually. Enter email: admin@example.com, account number: 4242 4242 4242 4242, expiry date: 11/20, CVC:123. A successful test payment is made. Test performed and true.
+6. click on "Signup" and be prompted to enter a username and password and then be sent to the login screen and login successfully. Test performed and true.
+7. click on "Logout" and successfully log out. Test performed and true.
+8. click on "Purchase item" and be taken through to Stripe payment, click to enter details manually. Enter email: admin@example.com, account number: 4242 4242 4242 4242, expiry date: 11/20, CVC:123. A successful test payment is made. Test performed and true.
+
+<a name="bugs"></a>
+
+## Known bugs
+* I am unable to switch debug to False as this crashes the site. After having spent six hours with Xavier from The Code Institute this is still an unresolved issue despite both our efforts. Due to time contraints it was decided to leave debug=True in order to have a finished product; this would not be the case if the site went live to the public.
 
 
 <a name="version"></a>

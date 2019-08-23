@@ -10,9 +10,14 @@
   {% if user.is_authenticated %}
     <p>Oops! It doesn't look like you have access to this page. Please login with an account that has access.</p>
   {% else %}
-    <p>You need to login or signup to see this page.</p>
+    <br/>
   {% endif %}
 {% endif %}
+
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="antique-list-heading">Login</h2>
 
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
@@ -29,8 +34,10 @@
 </tr>
 </table>
 
-<input type="submit" value="login" />
+<input type="submit" class="btn btn-info homepage-button" value="Login" />
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
-
+</div>
+</div>
+</div>
 {% endblock %}

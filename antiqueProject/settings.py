@@ -32,7 +32,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', '1234')
  
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =True
+
+DEBUG =True #Application crashed if set to false (seen with Xavier from Code Institute)
 
 ALLOWED_HOSTS = ['127.0.0.1', 'inwiththeold.herokuapp.com']
 
@@ -139,12 +140,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
-#PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
-#STATICFILES_LOCATION = 'static'  
-#STATICFILES_STORAGE = 'custom_storages.StaticStorage'   
-#STATIC_URL = '/static/'  
-#STATICFILES_DIRS = (      os.path.join(BASE_DIR, "static"),  ) 
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
