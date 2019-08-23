@@ -48,7 +48,7 @@ class AntiqueSale(models.Model):
     customerFirstName = models.CharField(max_length=100, null=False)
     customerLastName = models.CharField(max_length=100, null=False)
     customerAddressLine1 = models.CharField(max_length=200, null=False)
-    customerAddressLine2 = models.CharField(max_length=200, null=True)
+    customerAddressLine2 = models.CharField(max_length=200, null=True, blank=True)
     customerAddressCity = models.CharField(max_length=200, null=False)
     customerAddressCounty = models.CharField(max_length=200, null=False)
     customerAddressPostcode = models.CharField(max_length=12, null=False)

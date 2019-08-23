@@ -2,14 +2,24 @@
 
 {% block content %}
 <!--List of all creators from the database-->
-<h1>List of antiques by {{ creator.CreatorName}}</h1>
+<h1 class="antique-list-heading">List of antiques by {{ creator.CreatorName}}</h1>
+<ul>
+    <div class="container">
+      <div class="row">
 
-<dl>
 {% for antique in creator.antique_set.all %}
-  <dt><a href="{% url 'antique-detail' antique.pk %}">{{ antique.AntiqueName }}</a></dt>
-  
+<div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="card card-styling">
+      <div class="card-body">
+          <a href="{% url 'antique-detail' antique.pk %}"><img class="antique-image-styling" src="{{ antique.AntiqueImage }}"
+            alt="{{ Antique.AntiqueName }}"></a>
+        <h5 class="card-title text-truncate">{{ antique.AntiqueName }}</h5>
+        <h6 class="text-muted">£{{antique.Price}}</h6>
+        <a href="{% url 'antique-detail' antique.pk %}" class="btn btn-info more-info-button btn-block">More info</a>
+      </div>
+    </div>
+  </div>
 {% endfor %}
-</dl>
 
 </div>
   

@@ -3,10 +3,9 @@
 <!--Successful payment code pulling sale details through-->
 <div class="container-fluid">
         <div class="row sale-summary-styling">
-                <div class="col-xs-12">
-                        <h3>Thank you! We have successfully received your payment.<br />The
-                                details of your
-                                purchase are below</h3>
+                <div class="col">
+                        <h3 class="successful-payment-styling">Thank you! We have successfully received your payment
+                        </h3>
                 </div>
         </div>
         <div class="row">
@@ -15,6 +14,7 @@
                                         src="{{ sale.antique.AntiqueImage }}" alt="{{ Antique.AntiqueName }}"></a>
                 </div>
                 <div class="col-xs-12">
+                        <p><strong>You have purchased:</strong></p>
                         <p><strong>Antique:</strong> {{ sale.antique.AntiqueName }}
                         </p>
                         <p><strong>Creator:</strong> {{ sale.antique.Creator }}
@@ -23,10 +23,10 @@
                 </div>
         </div>
         <div class="row">
-        <div class="col-xs-12">
-                <a href="{% url 'index' %}" class="btn btn-info homepage-button"
-                        role="button">Return to homepage</a>
-        </div>
+                <div class="col-xs-12">
+                        <a href="{% url 'index' %}" class="btn btn-info homepage-button" role="button">Return to
+                                homepage</a>
+                </div>
         </div>
 </div>
 

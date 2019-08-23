@@ -14,10 +14,9 @@ This project is licensed under the MIT License - see the [license.txt](license.t
 2. [Deployment](#deploy)
 3. [Features](#features)
 4. [Technology used](#tech)
-5. [Using Stripe payment](#stripe)
-6. [Testing](#testing)
-7. [Versioning](#version)
-8. [Acknowledgements and credits](#credits)
+5. [Testing(including tester instructions on site and Stripe payment and user stories)](#testing)
+6. [Versioning](#version)
+7. [Acknowledgements and credits](#credits)
 
 <a name="overview"></a>
 
@@ -79,14 +78,6 @@ The site is styled with **Bootstrap** and I have made the site responsive so use
 These features have not been included in stage 1 of development but would be implemented in future developments:
 * Shopping cart feature was deemed unnecessary for first release as people buying antiques aren't likely to purchase multiple but this feature would be included in stage 2.
 
-<a name="stripe"></a>
-
-## Instructions for using Stripe in test mode
-You can not use genuine card information in Stripe test mode. Here is a test card that is widely accepted for Stripe test mode:
-* Credit card number: 4242 4242 4242 4242
-* Expiration date: any date in the future with the format MM/YY
-* CVC: any 3-digits number
-
 
 <a name="tech"></a>
 
@@ -136,6 +127,20 @@ You can not use genuine card information in Stripe test mode. Here is a test car
     * Opera
 *  Used incognito mode on **Google Chrome** to remove all cached data.
 
+## Instructions given to test subjects
+1. Please click on the heroku url and have a trial browse and attempt to buy an item (this should fail).
+2. Select the "Signup" button and create a username and password.
+3. Thoroughly test the site (try and break it).
+4. Select an item and click "Purchase item".
+5. You should then be presented with a form for payment, fill this in with fictional details.
+6. Select "Pay with card" (this should only appear once you've completed the form details).
+7. You should be prompted to fill in card details. You can not use genuine card information in Stripe test mode. You may be directed to another pop up window advising to "Enter the verification code...."; please select "Fill in your card details manually". Here is a test card that is widely accepted for Stripe test mode:
+* Credit card number: 4242 4242 4242 4242
+* Expiration date: any date in the future with the format MM/YY
+* CVC: any 3-digits number
+8. You should then be redirected to a successful payment screen.
+9. Select the "logout" button and be logged out.
+
 ## User stories as part of testing
 As a user I want to...
 1. search 'eight' and see 1 antique ("Eight flow blue cabinet plates") appear. Test performed and true.
@@ -147,6 +152,7 @@ As a user I want to...
 7. click on "Signup" and be prompted to enter a username and password and then be sent to the login screen and login successfully. Test performed and true.
 8. click on "Logout" and successfully log out. Test performed and true.
 9. click on "Purchase item" and be taken through to Stripe payment, click to enter details manually. Enter email: admin@example.com, account number: 4242 4242 4242 4242, expiry date: 11/20, CVC:123. A successful test payment is made. Test performed and true.
+
 
 <a name="version"></a>
 
