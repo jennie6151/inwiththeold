@@ -5,11 +5,11 @@
 <!--Payment summary: to give payment/delivery form context-->
 <div class="container-fluid">
     <div class="row sale-summary-styling">
-        <div class="col">
+        <div class="col-sm-4">
             <img class="antique-detail-image-styling"
                     src="{{ sale.antique.AntiqueImage }}" alt="{{ Antique.AntiqueName }}">
         </div>
-        <div class="col sale-summary-text">
+        <div class="col-sm-5 sale-summary-text">
             <p>You are about to purchase:</p>
             <p><strong>Antique:</strong> {{ sale.antique.AntiqueName }}
             </p>

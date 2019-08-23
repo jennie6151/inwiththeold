@@ -139,9 +139,9 @@ html{
 
 /*------------* antique_detail *------------*/
     .antique-detail-image-styling{
-        height: 30vh;
         object-fit: cover;
         margin:10px;
+        max-width:100%;
     }
 
 

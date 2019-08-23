@@ -16,7 +16,7 @@ import environ
 
 env = environ.Env(
     # set casting, default value
-    DEBUG=(bool, True) 
+    DEBUG=(bool, False) 
 )
 # reading .env file
 environ.Env.read_env()
@@ -32,7 +32,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
  
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'inwiththeold.herokuapp.com']
 
