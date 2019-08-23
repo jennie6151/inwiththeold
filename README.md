@@ -127,9 +127,14 @@ These features have not been included in stage 1 of development but would be imp
     * Opera
 *  Used incognito mode on **Google Chrome** to remove all cached data.
 
+## Test account website login details
+If you do not wish to create a new user this is an existing user:
+Username: tester
+Password: testpassword
+
 ## Instructions given to testers
 1. Please click on the heroku url and have a trial browse and attempt to buy an item (this should fail).
-2. Select the "Signup" button and create a username and password.
+2. Select the "Signup" button and create a username and password (or use the details above).
 3. Thoroughly test the site (try and break it).
 4. Select an item and click "Purchase item".
 5. You should then be presented with a form for payment, fill this in with fictional details.
