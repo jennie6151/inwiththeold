@@ -127,7 +127,7 @@ These features have not been included in stage 1 of development but would be imp
     * Opera
 *  Used incognito mode on **Google Chrome** to remove all cached data.
 
-## Instructions given to test subjects
+## Instructions given to testers
 1. Please click on the heroku url and have a trial browse and attempt to buy an item (this should fail).
 2. Select the "Signup" button and create a username and password.
 3. Thoroughly test the site (try and break it).
