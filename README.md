@@ -14,7 +14,7 @@ This project is licensed under the MIT License - see the [license.txt](license.t
 2. [Deployment](#deploy)
 3. [Features](#features)
 4. [Technology used](#tech)
-5. [Testing(including tester instructions on site and Stripe payment and user stories)](#testing)
+5. [Testing (including tester instructions on site and Stripe payment and user stories)](#testing)
 6. [Versioning](#version)
 7. [Acknowledgements and credits](#credits)
 
@@ -129,8 +129,8 @@ These features have not been included in stage 1 of development but would be imp
 
 ## Test account website login details
 If you do not wish to create a new user this is an existing user:
-Username: tester
-Password: testpassword
+* Username: tester
+* Password: testpassword
 
 ## Instructions given to testers
 1. Please click on the heroku url and have a trial browse and attempt to buy an item (this should fail).
