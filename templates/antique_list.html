@@ -30,16 +30,20 @@
 <!--If no results found-->
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <h4 class="no-antiques-here">There are no antiques to see here. Please go back and try another search.</h4>
-      <form action="{% url 'search' %}" method="GET">
-        <div class="col-lg-12 mx-auto">
-          <input type="text" name="q" placeholder="Search for an antique or creator" class="search-styling" />
-        </div>
-        <div><button type="submit" class="btn btn-info search-button">Search</button></div>
-      </form>
+    <div class="col-sm-12">
+      <h4 class="no-antiques-here">There are no antiques to see here. Please try another search.</h4>
+      
     </div>
   </div>
+<div class="row">
+  <div class="col-sm-12">
+      <form action="{% url 'search' %}" method="GET" class="form-inline justify-content-center">
+            <input type="text" name="q" placeholder="Search for an antique or creator" class="search-styling" />
+          <div><button type="submit" class="btn btn-info search-button">Search</button></div>
+        </form>
+  </div>
+</div>
+
 </div>
 {% endif %}
 

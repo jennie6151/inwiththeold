@@ -9,11 +9,11 @@
                 </div>
         </div>
         <div class="row">
-                <div class="col-xs-12">
-                        <a href="{{ sale.antique.get_absolute_url }}"><img class="antique-detail-image-styling"
-                                        src="{{ sale.antique.AntiqueImage }}" alt="{{ Antique.AntiqueName }}"></a>
+                <div class="col-12">
+                       <img class="antique-detail-image-styling"
+                                        src="{{ sale.antique.AntiqueImage }}" alt="{{ Antique.AntiqueName }}">
                 </div>
-                <div class="col-xs-12">
+                <div class="col-12">
                         <p><strong>You have purchased:</strong></p>
                         <p><strong>Antique:</strong> {{ sale.antique.AntiqueName }}
                         </p>
@@ -23,7 +23,7 @@
                 </div>
         </div>
         <div class="row">
-                <div class="col-xs-12">
+                <div class="col-12">
                         <a href="{% url 'index' %}" class="btn btn-info homepage-button" role="button">Return to
                                 homepage</a>
                 </div>

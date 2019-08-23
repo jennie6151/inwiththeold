@@ -4,16 +4,16 @@
 <!--Page of detail for each antique-->
 <div class="container container-styling">
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-sm-12">
             <h1 class="antique-list-heading">{{ antique.AntiqueName }}</h1>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6 col-xs-12">
+        <div class="col-lg-6 col-sm-12">
             <img class="antique-detail-image-styling"
                     src="{{ antique.AntiqueImage }}" alt="{{ Antique.AntiqueName }}">
         </div>
-        <div class="col-lg-6 col-xs-12">
+        <div class="col-lg-6 col-sm-12">
             <p><strong>Creator:</strong> <a
                     href="{% url 'creator-detail' antique.Creator.pk %}">{{ antique.Creator }}</a>
             </p>

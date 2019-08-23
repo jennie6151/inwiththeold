@@ -84,7 +84,7 @@ html{
     background-color: #6E4555;
     border-color:transparent;
     margin:5px;
-    width: 25%;
+    width: auto;
 }
 
 .search-button:hover {
@@ -161,7 +161,7 @@ html{
         font-size: 20px;
         color: #E6E1C5;
         background-color:#6E4555;
-        padding:20px;
+        padding:35px;
         margin-bottom:20px;
 }
 
