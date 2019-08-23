@@ -4,7 +4,7 @@ html{
 }
 
 .body-font-styling{
-    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
     color: #153243;
 }
 
@@ -33,7 +33,7 @@ html{
 }
 
 .logo-styling{
-    font-family: 'IM Fell English', serif;
+    font-family: 'IM Fell Great Primer', serif;
     font-weight:bold;
 }
 
@@ -46,7 +46,7 @@ html{
 }
 
 .jumbotron-heading-styling{
-    font-family: 'IM Fell English', serif;
+    font-family: 'IM Fell Great Primer', serif;
     font-weight: bold;
 }
 
