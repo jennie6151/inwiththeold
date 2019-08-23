@@ -6,7 +6,7 @@ $(document).ready(function(){
     $('#disabled-pay').show();
 
     $('#paymentForm').keyup(function(){
-        var form = document.getElementById('paymentForm')
+        var form = document.getElementById('paymentForm');
       
         if(form.checkValidity()){
             $('#pay-button').show();
@@ -16,6 +16,6 @@ $(document).ready(function(){
             $('#pay-button').hide();
             $('#disabled-pay').show();
         }
-    })    
+    }); 
  
 });
